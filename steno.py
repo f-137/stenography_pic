@@ -61,6 +61,8 @@ def hide_text_in_image(image_path, text):
     #print(pixels[0,0])
     #print(pixels[0,16])
     
+
+
     for y in range(height):
         for x in range(width):
             r, g, b = pixels[x, y]
@@ -87,7 +89,7 @@ def hide_text_in_image(image_path, text):
                  
             #print(pixels[x,y])
             
-    # oh boi
+    # removed?
 
     # Save the modified image
     current_file_path = os.path.realpath(__file__)
