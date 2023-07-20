@@ -87,7 +87,7 @@ def hide_text_in_image(image_path, text):
                  
             #print(pixels[x,y])
             
-      
+    # oh boi
 
     # Save the modified image
     current_file_path = os.path.realpath(__file__)
