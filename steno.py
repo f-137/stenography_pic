@@ -30,16 +30,12 @@ def get_txt():
 def hide_text_in_image(image_path, text):
     # Open the image file
     image = Image.open(image_path)
-
     # Convert the image to RGB mode if it's not already
     image = image.convert("RGB")
-
     # Get the size of the image
     width, height = image.size
-
     # Convert the text to binary
     bits = text_to_bits(text)
-
     #add the message length to the end of the bits(4x8bit)
     binary = bin(len(bits))[2:]
     binary = binary.zfill(32)
@@ -54,19 +50,15 @@ def hide_text_in_image(image_path, text):
     if len(bits) > width * height * 3:
         print("Text is too long to fit within the image.")
         return
-
     # Access each pixel's information
     pixels = image.load()
     bit_index = 0
     #print(pixels[0,0])
     #print(pixels[0,16])
     
-
-
     for y in range(height):
         for x in range(width):
             r, g, b = pixels[x, y]
-
             # Modify the least significant bit of each RGB value
             
             if bit_index < len(bits):
@@ -89,8 +81,7 @@ def hide_text_in_image(image_path, text):
                  
             #print(pixels[x,y])
             
-    # removed?
-
+    # lol
     # Save the modified image
     current_file_path = os.path.realpath(__file__)
     current_folder_path =os.path.dirname(current_file_path)
